@@ -92,7 +92,7 @@ object TableMacros {
       sym = typeRef.sym,
       args = weakTypeOf[V[Sc]].typeArgs
     )
-    c.Expr[Table.Metadata[V]](q"""{
+    val res = c.Expr[Table.Metadata[V]](q"""{
 
     new _root_.scalasql.query.Table.Metadata(
       (dialect, n) => {
@@ -117,6 +117,8 @@ object TableMacros {
       }
     )
     }""")
+    println(res)
+    res
   }
 
 }

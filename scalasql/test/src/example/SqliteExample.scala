@@ -60,6 +60,8 @@ object SqliteExample {
         db.run(ExampleProduct.select.filter(_.price > 10).sortBy(_.price).desc.map(_.name))
 
       assert(result2 == Seq("Camera", "Skate Board", "Cookie"))
+
+      println("ok")
     }
   }
 }
